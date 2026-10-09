@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://noomicheems.online/sitemap.xml

@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+Options -Indexes
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.noomicheems\.online$ [NC]
+RewriteRule ^ https://noomicheems.online%{REQUEST_URI} [R=301,L]
+</IfModule>
