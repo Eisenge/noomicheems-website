@@ -1,0 +1,4 @@
+interface:
+  display_name: "Noomicheems 项目接续"
+  short_description: "接续小游戏站建设、SEO、统计排查与外链申请，保留历史决策和待办状态"
+  default_prompt: "使用 $noomicheems-operator 读取项目状态和相关历史，按我当前的要求继续工作，并核实完成结果。"

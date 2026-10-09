@@ -2,6 +2,10 @@
 
 Website source for [noomicheems.online](https://noomicheems.online/), an independent browser-play and guide site.
 
+## Continue this project with an AI assistant
+
+Start with [AGENTS.md](AGENTS.md) and the [Noomicheems operator skill](.agents/skills/noomicheems-operator/SKILL.md). The skill records owner decisions, project status, analytics troubleshooting and backlink submissions through 9 October 2026. It is a structured conversation handoff, not a verbatim transcript. Follow the latest user request and verify dated status before acting. Tools that do not automatically read repository instructions should be explicitly directed to these files.
+
 The homepage embeds **NoomiClone, the original game by jamesnorth**. It is not the Noomicheems community mod and is not affiliated with or endorsed by the original creator.
 
 ## What is included
