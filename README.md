@@ -45,3 +45,11 @@ The measurement and publisher identifiers in these public files are website conf
 - Site attribution: [Sources and credits](https://noomicheems.online/sources/)
 
 This repository contains the site's HTML, CSS and JavaScript wrapper and guide pages. It does not contain the original game's source code, executable or game assets. Rights to the game remain with their respective owners; publishing this repository does not grant rights to redistribute or modify it. No software license is granted by this repository at present.
+
+## Multilingual release — 10 October 2026
+
+English remains at `/`; Russian, Spanish, Portuguese and Indonesian use `/ru/`, `/es/`, `/pt/` and `/id/`. Each locale has eight complete static pages, reciprocal HTML hreflang annotations, self-canonicals and matching language-switch links. The sitemap lists 40 canonical URLs. The embedded original game itself remains English.
+
+Edit translations in `scripts/locales.json` and `scripts/more-locales.json`, then run `python3 scripts/build_locales.py`. English source remains in `public/`. Validate with `python3 scripts/check_site.py`. Shared player and analytics strings come from generated `public/i18n.js`. No browser-language redirects are used.
+
+The player now uses a compact dark layout, a wide default view, optional fit-to-window mode and wrapper fullscreen with reload/exit controls. The complete original itch.io embed is retained, including attribution. Consent behavior remains opt-in; translating the UI does not add gameplay tracking.

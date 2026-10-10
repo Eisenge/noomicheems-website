@@ -16,7 +16,7 @@ Earlier local work included separate public/, preview/, deploy/ and dated ZIP pa
 - Use full 1282 × 786 embed proportions, scaling the entire iframe. Fullscreen must fit both available dimensions. Avoid reintroducing cropped controls by forcing arbitrary iframe width/height.
 - Itch.io attribution/toolbar stays visible. Third-party game canvas and controls are cross-origin; wrapper changes cannot alter internal UI.
 - Keyboard controls: left arrow arch, Space tuck, up arrow release, R reset. Focus inside the iframe first. Do not invent mod features, mobile controls or maps.
-- Preserve English copy, page-specific metadata/canonicals, JSON-LD, sitemap and working footer links. Canonical production origin is https://noomicheems.online/; .htaccess redirects HTTP/www to this origin.
+- Preserve each locale’s copy, page-specific metadata/canonicals, JSON-LD, sitemap and working footer links. Canonical production origin is https://noomicheems.online/; .htaccess redirects HTTP/www to this origin.
 - If changing player logic, inspect both app.js and any inline homepage script before editing; the current source may duplicate player initialization inline. Verify behavior, not just one file.
 
 ## GA4 unresolved diagnostic
@@ -46,3 +46,7 @@ GitHub connector authenticated as Eisenge and successfully wrote the full source
 Personal Chrome and in-app browser have independent sessions. Chrome extension control became unavailable; native app UI sometimes returned stale text or mismatched click outcomes. Verify visible current state after actions and avoid blind retries. Browser IDs and element indices in old conversations are not reusable instructions. Use current tool documentation and fresh page evidence.
 
 For submissions or uploads, an attempted click is not completion. Look for a receipt, current repository contents or verified deployment. Keep passwords, cookies, authentication URLs, personal inbox content and unrelated machine state out of files and public commits.
+
+## 10 October multilingual update
+
+Use scripts/build_locales.py to regenerate the four translated locale trees and hreflang/sitemap; scripts/check_site.py checks all 40 pages. English pages are edited directly. Default player view now uses the full page width, with fit-to-window and wrapper fullscreen options. Homepage initialization is shared app.js rather than duplicated inline code. Keep i18n.js before analytics.js and app.js on translated pages.
