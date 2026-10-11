@@ -17,7 +17,7 @@ This is a structured handoff distilled from the available conversation and execu
 
 ## Owner's durable choices
 
-- Communicate with the owner in Chinese; website and outreach content are English for overseas visitors.
+- Communicate with the owner in Chinese; the site targets overseas visitors in English, Russian, Spanish, Portuguese and Indonesian (approved 10 October). Outreach language depends on the destination.
 - The active site earns prospective advertising revenue from browser-game traffic. The earlier subscription-service idea does not authorize adding subscriptions or payments to this site.
 - Keep the playable game prominent on the homepage and playable within the page. A deliberate Play button is already used. Do not replace it with an external redirect.
 - The owner explicitly accepted **NoomiClone original by jamesnorth** while the Noomicheems community mod lacks a verified browser release. Preserve clear original-game and unofficial-site labeling.
