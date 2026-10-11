@@ -5,7 +5,7 @@ description: Continue the Noomicheems.online project using its recorded owner de
 
 # Noomicheems project operator
 
-This is a structured handoff distilled from the available conversation and execution summaries through 2026-10-09, not a verbatim transcript or a guarantee that old account state remains current. Missing historical answers must remain unknown; do not reconstruct invented traffic numbers, keyword scores or completed tasks.
+This is a structured handoff distilled from the available conversation and execution summaries through 2026-10-11, not a verbatim transcript or a guarantee that old account state remains current. Missing historical answers must remain unknown; do not reconstruct invented traffic numbers, keyword scores or completed tasks.
 
 ## Start here
 
@@ -13,6 +13,7 @@ This is a structured handoff distilled from the available conversation and execu
 2. For product scope, keyword research or a new site idea, read [decisions-and-history.md](references/decisions-and-history.md).
 3. For external promotion, read [backlinks.md](references/backlinks.md) before contacting or submitting anywhere. Prevent duplicate submissions.
 4. For code, hosting or analytics, read [operations.md](references/operations.md), then inspect current repository and live behavior. Use repository-relative paths; old machine paths and tab IDs are not portable.
+5. **For any operational workflow (keyword pages, deployment, verification, game-outage, GSC, backlinks), follow [sops.md](references/sops.md)** — the accumulated, verified standard operating procedures. Do not improvise around the verified steps.
 
 ## Owner's durable choices
 
@@ -22,11 +23,12 @@ This is a structured handoff distilled from the available conversation and execu
 - The owner explicitly accepted **NoomiClone original by jamesnorth** while the Noomicheems community mod lacks a verified browser release. Preserve clear original-game and unofficial-site labeling.
 - All footer destinations must have real pages. Maintain SEO and responsive player behavior when changing the homepage.
 - Learn keyword methods from the owner's Web Cafe resources, then independently evaluate actual candidate words. Do not ask its AI to invent a keyword list and call that research.
+- New sections/pages must be SEO-valid, shipped in all 5 languages, reachable from a directory hub, with breadcrumbs, and reflected in sitemap.xml.
 - Work through authorized tasks concretely; avoid repeated login/approval questions when already resolved. Ask narrowly for genuinely missing access or required action-time approval.
 
 ## Evidence and completion
 
-An uploaded tag is not proof of received analytics data; a submitted directory form is not an approved backlink; a GitHub commit is not a production deployment. State which stage is verified.
+An uploaded tag is not proof of received analytics data; a submitted directory form is not an approved backlink; a GitHub commit is not a production deployment; a submitted sitemap is not proof of indexing. State which stage is verified.
 
 Use available connectors or authenticated tools where possible. Browser sessions may expire or represent a different profile. Never embed credentials, authentication URLs, private correspondence or personal browser data in this public skill. Use a contact email supplied or authorized for the current destination rather than publishing a personal address here.
 

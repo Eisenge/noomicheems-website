@@ -6,7 +6,11 @@
 
 Preview with `python3 -m http.server 8765 --directory public`. No package build is required. The Python server does not implement Apache redirects/custom error handling.
 
-For an authorized Hostinger release, back up existing public files and upload the contents of public/ to the domain's public_html, preserving subdirectories and .htaccess. Keep .agents/, AGENTS.md and repository docs outside the web root. Verify HTTPS, homepage, affected pages and game after deployment. GitHub updates alone do not change production.
+**Actual upload source since 2026-10-10: `noomicheems-deploy/` (next to this project folder) — the live, complete mirror of production; never upload from /tmp/inc.** It contains the 5-language tree (ru/es/pt/id subdirectories), games/, news/, the-sift-minecraft/, wow-forever/, the older landing pages, app.js, i18n.js, analytics.js, sitemap.xml etc. Regenerate pages with build_i18n.py / build_news.py in that directory, then upload the changed files.
+
+For an authorized Hostinger release, back up existing public files and upload the contents of noomicheems-deploy/ to the domain's public_html, preserving subdirectories and .htaccess. Keep .agents/, AGENTS.md and repository docs outside the web root. Verify HTTPS, homepage, affected pages and game after deployment. GitHub updates alone do not change production.
+
+Deployment entry: hpanel → website Dashboard → "File manager / Edit your files" card → "Open" button (opens File Browser with a fresh token in a new tab). Direct srv1902-files URLs without the token return 403 once the session expires. Upload lessons: do per-directory uploads (long loops time out and drop files), confirm the "Replace all files in destination folder" dialog, and after editing app.js/i18n.js bump the `?v=YYYYMMDD` query version in every referencing page and re-upload those pages or browsers keep serving cached JS.
 
 Earlier local work included separate public/, preview/, deploy/ and dated ZIP packages. preview/ was older; the latest documented package was noomicheems-ga4-upload.zip. Use current repository and live checks instead of guessing paths or choosing an old archive by name.
 

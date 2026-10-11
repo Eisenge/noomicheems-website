@@ -7,7 +7,9 @@
 | GamesNav | https://www.gamesnav.com/contact | Owner reported contacted. Earlier Send attempt produced no clear success; message was shortened at owner's request. Do not repeat contact without checking replies/status. Listing not verified. |
 | Curlie | https://curlie.org/en/Games/Video_Games/Simulation/Browser_Based | Suggestion receipt title observed after user completion. Await editor review; listing not verified. |
 | GitHub | https://github.com/Eisenge/noomicheems-website | Real project code and documentation published; README links to site. Not a directory approval or guaranteed SEO ranking benefit. |
-| SoMuch | https://www.somuch.com/submit-links/ | Owner reported submitted. Topic Entertainment, category Games. Free option. Email confirmation still unverified in our evidence; check within three days. Approval/listing not verified. |
+| SoMuch | https://www.somuch.com/submit-links/ | Owner reported submitted; email confirmation reported verified 2026-10-10. Topic Entertainment, category Games. Free option. Approval/listing live status not verified. |
+| Medium | https://medium.com/@lishihchiehn/noomiclone-beginners-guide-2026-controls-swing-timing-and-practice-tips-55f9830cafe0 | Published 2026-10-10. Author li shihchieh, tag Browser Games. Article links to homepage, controls and guide pages. Account created with owner's email; publish completed by assistant. |
+| Dev.to | https://dev.to/eisen/noomiclone-a-physics-playground-in-your-browser-controls-timing-and-how-to-practice-344k | Published 2026-10-10 via Google OAuth account (lishihchiehn@gmail.com); Dev.to username "eisen". Tags: webdev, gamedev, beginners, tutorial (gaming/physics not existing Dev.to tags, substituted). Post live; email-confirmation tab still open. |
 
 SoMuch application: homepage https://noomicheems.online/; title Noomicheems. Owner explicitly approved its submission guidelines and a personal reply email for this destination. The address is intentionally omitted from public records. Do not infer permission to use it for unrelated destinations.
 
