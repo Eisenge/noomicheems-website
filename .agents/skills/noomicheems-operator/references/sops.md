@@ -72,7 +72,18 @@ Fix (site side, already applied 2026-10-11):
 
 - Long tasks on the owner's Mac: run `caffeinate -dims` in background to prevent screen sleep; check pid on resume.
 
-## 8. Re-grounding pointers after context compression
+## 11. Internal-links SOP (added 2026-10-13)
+
+Purpose: strengthen site-internal linking — "Related pages" nav on every content page and an "Explore more" section on every homepage, 5 languages, to distribute link equity and help crawlers discover deep pages.
+
+1. Script: `noomicheems-deploy/build_internal_links.py` (run from `noomicheems-deploy/`, `python3 build_internal_links.py`). It reads the RELATED slug map (guide/controls/help/noomiclone-tips/freeze-tag-meaning/halo-ce-browser/lagos-life-game/the-sift-minecraft/wow-forever/games/news) and EXPLORE list (guide/controls/noomiclone-tips/news/games).
+2. Anchor text: extracted from each target page's `<title>` (descriptive), stripping trailing `—/| Noomicheems` suffixes; h1 fallback. Labels localized per language (Related pages / Похожие страницы / Páginas relacionadas / Halaman terkait; Explore more / Смотреть ещё / Explorar más / Jelajahi lainnya).
+3. Insertion point: immediately before `</main>` on each page (55 content pages + 5 homepages = 60 blocks).
+4. Styles: append `.related,.explore` block styles to `style.css` (pill links on dark theme). After appending CSS, RE-UPLOAD style.css and verify the live file contains the new rules (curl) — the first upload attempt silently failed (Replace dialog handled twice); always verify.
+5. Deployment: upload per directory via File Browser (61 files: root index.html + style.css, 11 content dirs × 5 languages incl. each language root index.html). Upload loops time out — split by language, re-enter token via hpanel "Open" if 403, use `bu.wait_for_element("#upload-input")` before each upload, and confirm the "Replace all files" modal via JS click.
+6. Verify live with parallel python urllib checks: `.related`/`.explore` blocks and link counts per URL; expect related=1 or explore=1. Slow CDN cold-cache responses on some paths are transient; re-check rather than concluding failure.
+
+## 8. Re-grounding pointers after context compression (updated 2026-10-13)
 
 - Read references/project-state.md, operations.md, backlinks.md.
 - Live site is the source of truth; the local repo `public/` may lag production.
