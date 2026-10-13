@@ -78,3 +78,59 @@ Fix (site side, already applied 2026-10-11):
 - Live site is the source of truth; the local repo `public/` may lag production.
 - Always deploy from `noomicheems-deploy/`, never /tmp/inc.
 - Browser tabs/refs/tokens expire; re-observe before acting (see browser-use-automation-mac skill).
+
+## 9. Daily keyword screening SOP (cross-site, owner-approved 2026-10-13)
+
+Purpose: every day, scan Web.Cafe for new keywords, judge what can be built (page vs new site), and log the decision. This is the pipeline feeding new pages/sites across all owner sites.
+
+### 9.1 Daily data sources (about 10 min, once per day)
+1. Updates feed: https://new.web.cafe/data/updates — daily batches (new words / resurgence / mini-games). The "recently scanned" line shows today's batches.
+2. Resurgence board: https://new.web.cafe/keywords?tab=resurgence — filter "值得做" (worth doing). GPTs multiple = 7-day heat ÷ GPTs heat.
+3. Evergreen board: https://new.web.cafe/keywords?tab=evergreen&v=worth — long-tail stable words, worth-checking filter.
+
+### 9.2 Screening criteria (apply in order; a candidate passes only if all relevant checks pass)
+1. Volume: GPTs × ≥ 0.05 = standalone-site line; × 0.01–0.05 = inner-page candidate; below = skip unless long-tail family is large.
+2. Trend: rising (+%) preferred; "回落中" (declining) = skip; check the peak date vs today — a spike older than ~5 days with no sustained rise is a short-lived news spike.
+3. Competition: read "谷歌前两页" section — no dedicated homepage / mostly big-site inner pages = opportunity; a new-site homepage already ranking top 5 = inner page or skip; check first-page intent by real Google search (owner rule: remove ambiguous keywords).
+4. Intent: one clear intent, no brand-name collision or multi-game/multi-product mixing; verify with an actual Google SERP before building.
+5. Fit with existing sites: fits noomicheems (browser games / game news) or krillion (krillion-related) or a tool site → prefer inner page/news page in existing site; genuinely new theme → candidate new site.
+6. Rejected directions (never re-propose): reels/IG/YouTube downloaders, celebrity AI voice, AI baby/logo generators, windsurf-cam, new monetization tool sites (owner said "先不建新站" during the noomicheems phase).
+
+### 9.3 Decision output (log every day to a ledger)
+- 值得做 → note: inner page / news page (run build_i18n.py / build_news.py, 5 languages) or new site (draft: main keyword + domain + business model).
+- 可以试试 → re-check in 2–3 days before acting.
+- 不值得做 → archive with reason.
+
+### 9.4 Execution rhythm
+- Daily: scan the 3 sources → shortlist 5–10 candidates → update ledger.
+- Weekly: ship 1–3 best candidates (inner page / news page / new site).
+- Re-scan the ledger before any submission/deployment to avoid duplicates.
+
+## 10. Post-launch operations SOP (applies to noomicheems and any new site)
+
+Verified from Web.Cafe methodology (owner's learning requirement 2026-10-13):
+
+### 10.1 Launch day
+- GSC: submit domain property + sitemap (https://<domain>/sitemap.xml).
+- GA4: tag deployed and verified (real events arriving).
+- robots.txt: explicitly allow AI crawlers — GPTBot, Claude-Web, Anthropic-AI, PerplexityBot, Google-Extended, OAI-SearchBot, CCBot; point to llms.txt / llms-full.txt.
+- llms.txt + llms-full.txt present (SagaSu case: 12.5万 AI crawls observed).
+- Self-check canonical / hreflang / breadcrumbs / JSON-LD on every page.
+
+### 10.2 Week 1
+- Content rhythm: add ≥1 page every 1–2 days (keyword pages or news), all languages of the site.
+- GSC: request indexing for each new URL after deploy.
+- Backlinks batch 1: GitHub repo README, Medium guide, Dev.to guide, relevant directories (check backlinks.md ledger first).
+- Internal links: every new page reachable from a hub + breadcrumbs (owner rule).
+
+### 10.3 Month 1
+- Keep content cadence; 1 backlink every 2–3 days from varied sources.
+- GEO: titles include the year for AI search-crawler matching (e.g. "… 2026"); strong/absolute phrasing where factual.
+- Watch GSC: indexed count, impressions trend, keyword rank movement (target top 20).
+- Watch GA4: pageviews, engagement; for monetized pages track conversion events (register/subscribe).
+
+### 10.4 Viability check (4–6 weeks)
+- Signals of life: indexing grows, impressions appear, some keywords reach top 20, repeat visitors.
+- No indexing / no impressions → check robots.txt, quality (thin/AI-template pages), duplicate content, sitemap submission.
+- Decide: keep investing, pivot keywords, or park the site. Do not state traffic numbers that were not verified.
+
