@@ -15,7 +15,7 @@ Standard operating procedures for operating Noomicheems (https://noomicheems.onl
 1. Keyword sources: Web.Cafe https://new.web.cafe/data/updates and https://new.web.cafe/keywords?tab=evergreen&v=worth. Independently evaluate every candidate; verify intent with real Google searches (e.g. car driving → driving-school tutorials, watermark → encyclopedia, gpt chart → swallowed by ChatGPT). Never ask an AI to invent the keyword list.
 2. Do not re-propose directions the owner rejected: reels/IG downloaders (AdSense risk), celebrity AI voices, windsurf-cam, AI baby/logo generators, new monetization tool sites ("先不建新站").
 3. Fact-check with official sources (minecraft.net, news.xbox.com, news.blizzard.com, etc.) before writing copy; articles must cite official links.
-4. Generate with the scripts in `noomicheems-deploy/`:
+4. Generate with the scripts in this repo's `scripts/` (copied from the deploy source; run them from a working copy of the site tree):
    - Landing pages: `build_i18n.py` (5-language dict + template).
    - News-section pages: `build_news.py` (news hub in 5 languages + article landing pages + footer links + sitemap regeneration). Run with `python3 build_news.py`.
 5. Per-page SEO checklist (mandatory): unique title/h1/meta description, canonical, 6 hreflang, visible breadcrumb nav + BreadcrumbList JSON-LD (2 levels on hub, 3 on articles), ItemList JSON-LD on hubs, cross-links in footers (homepage ↔ games ↔ news).
@@ -76,7 +76,7 @@ Fix (site side, already applied 2026-10-11):
 
 Purpose: strengthen site-internal linking — "Related pages" nav on every content page and an "Explore more" section on every homepage, 5 languages, to distribute link equity and help crawlers discover deep pages.
 
-1. Script: `noomicheems-deploy/build_internal_links.py` (run from `noomicheems-deploy/`, `python3 build_internal_links.py`). It reads the RELATED slug map (guide/controls/help/noomiclone-tips/freeze-tag-meaning/halo-ce-browser/lagos-life-game/the-sift-minecraft/wow-forever/games/news) and EXPLORE list (guide/controls/noomiclone-tips/news/games).
+1. Script: `scripts/build_internal_links.py` in this repo (run from a working copy of the site tree, `python3 build_internal_links.py`). It reads the RELATED slug map (guide/controls/help/noomiclone-tips/freeze-tag-meaning/halo-ce-browser/lagos-life-game/the-sift-minecraft/wow-forever/games/news) and EXPLORE list (guide/controls/noomiclone-tips/news/games).
 2. Anchor text: extracted from each target page's `<title>` (descriptive), stripping trailing `—/| Noomicheems` suffixes; h1 fallback. Labels localized per language (Related pages / Похожие страницы / Páginas relacionadas / Halaman terkait; Explore more / Смотреть ещё / Explorar más / Jelajahi lainnya).
 3. Insertion point: immediately before `</main>` on each page (55 content pages + 5 homepages = 60 blocks).
 4. Styles: append `.related,.explore` block styles to `style.css` (pill links on dark theme). After appending CSS, RE-UPLOAD style.css and verify the live file contains the new rules (curl) — the first upload attempt silently failed (Replace dialog handled twice); always verify.

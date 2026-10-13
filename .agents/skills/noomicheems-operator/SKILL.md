@@ -14,6 +14,7 @@ This is a structured handoff distilled from the available conversation and execu
 3. For external promotion, read [backlinks.md](references/backlinks.md) before contacting or submitting anywhere. Prevent duplicate submissions.
 4. For code, hosting or analytics, read [operations.md](references/operations.md), then inspect current repository and live behavior. Use repository-relative paths; old machine paths and tab IDs are not portable.
 5. **For any operational workflow (keyword pages, deployment, verification, game-outage, GSC, backlinks), follow [sops.md](references/sops.md)** — the accumulated, verified standard operating procedures. Do not improvise around the verified steps.
+6. Site-generation and automation scripts live in the repo's `scripts/` (`build_i18n.py` landing pages, `build_news.py` news section, `build_internal_links.py` related/explore blocks, `build_locales.py` locale maps, `check_site.py` live checks). Run them from a working copy of the site tree as sops.md describes.
 
 ## Owner's durable choices
 
